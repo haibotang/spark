@@ -36,7 +36,6 @@ public class SparkMysql {
         System.out.println("读取spark数据库中的t_book表内容");
         // 读取表中所有数据
 //        Dataset dataset = sqlContext.read().jdbc(url,table,connectionProperties).select("*");
-
         sqlContext.read().jdbc(url, "t_book", connectionProperties).createOrReplaceTempView("t_book");
         sqlContext.read().jdbc(url, "t_book_desc", connectionProperties).createOrReplaceTempView("t_book_desc");
         Dataset dataset =  sqlContext.sql("select a.id,count(1) from t_book a join t_book_desc b on b.b_id = a.id group by a.id");
