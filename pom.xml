@@ -44,6 +44,24 @@
             <version>2.4</version>
             <classifier>jdk15</classifier>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/mongodb/mongo-spark -->
+        <dependency>
+            <groupId>mongodb</groupId>
+            <artifactId>mongo-spark</artifactId>
+            <version>2.2.1-s_2.11</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>scala-library</artifactId>
+                    <groupId>org.scala-lang</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
+        </dependency>
     </dependencies>
 
 </project>
